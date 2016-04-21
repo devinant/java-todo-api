@@ -20,7 +20,7 @@ public class TodosResource {
         this.todoDao = todoDao;
     }
 
-    @PUT
+    @POST
     @UnitOfWork
     public Todo createTodo(Todo todo) {
         return todoDao.create(todo);
