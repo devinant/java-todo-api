@@ -12,10 +12,6 @@ import java.util.Objects;
     @NamedQuery(name  = "ac.opij.todo.core.Todo.findAll", query = "SELECT t FROM Todo t")
 })
 public class Todo {
-    private enum Status {
-        INCOMPLETE, COMPLETE
-    }
-
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
