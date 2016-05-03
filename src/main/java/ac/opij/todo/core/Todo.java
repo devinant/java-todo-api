@@ -15,7 +15,7 @@ public class Todo {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false)
     @ApiModelProperty(required = true)
@@ -33,10 +33,10 @@ public class Todo {
     }
 
     public long getId() {
-        return id;
+        return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
