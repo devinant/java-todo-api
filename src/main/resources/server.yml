@@ -8,10 +8,11 @@ server:
 
 database:
   driverClass: org.sqlite.JDBC
-  url: "jdbc:sqlite::memory:"
+  url: "jdbc:sqlite:todo.db"
   properties:
     charSet: UTF-8
     hibernate.dialect: org.hibernate.dialect.SQLiteDialect
+    hibernate.generate_statistics: false
     hibernate.hbm2ddl.auto: update
 
 swagger:
