@@ -26,6 +26,12 @@ public class TodosResource {
         return todoDao.create(todo);
     }
 
+    @PUT
+    @UnitOfWork
+    public Todo updateTodo(Todo todo) {
+        return this.todoDao.update(todo);
+    }
+
     @GET
     @UnitOfWork
     public List<Todo> listTodos() {

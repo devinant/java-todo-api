@@ -21,6 +21,10 @@ public class TodoDAO extends AbstractDAO<Todo> {
         return this.persist(todo);
     }
 
+    public Todo update(Todo todo) {
+        return this.create(todo);
+    }
+
     public List<Todo> findAll() {
         return this.list(this.namedQuery("ac.opij.todo.core.Todo.findAll"));
     }
