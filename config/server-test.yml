@@ -1,0 +1,18 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 9000
+  adminConnectors:
+    - type: http
+      port: 9001
+
+database:
+  driverClass: org.sqlite.JDBC
+  url: "jdbc:sqlite::memory:"
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.SQLiteDialect
+    hibernate.hbm2ddl.auto: update
+
+swagger:
+  resourcePackage: ac.opij.todo
