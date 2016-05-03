@@ -9,6 +9,7 @@ import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
 
+import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.Response;
 import java.util.Optional;
 
@@ -30,6 +31,10 @@ public class TodoResourceTest {
 
     private Todo todo;
 
+    private WebTarget todoTarget(String param) {
+        return RULE.getJerseyTest().target(String.format("/todo/%s", param));
+    }
+
     @Before
     public void setUp() throws Exception {
         this.todo = new Todo();
@@ -45,7 +50,7 @@ public class TodoResourceTest {
     public void testTodoWasFound() throws Exception {
         when(DAO.findById(1L)).thenReturn(Optional.of(this.todo));
 
-        Todo todo = RULE.getJerseyTest().target("/todo/1")
+        Todo todo = todoTarget("1")
                 .request()
                 .get(Todo.class);
 
@@ -57,8 +62,7 @@ public class TodoResourceTest {
     public void testTodoNotFound() throws Exception {
         when(DAO.findById(2L)).thenReturn(Optional.empty());
 
-        final Response response = RULE.getJerseyTest()
-                .target("/todo/2")
+        final Response response = todoTarget("2")
                 .request()
                 .get();
 
