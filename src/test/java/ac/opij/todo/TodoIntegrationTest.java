@@ -16,7 +16,7 @@ import javax.ws.rs.core.MediaType;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class TodoIntegrationTest {
-    private static final String CONFIG = "config/server-test.yml";
+    private static final String CONFIG = "src/test/resources/server.yml";
     private Client client;
 
     @ClassRule
