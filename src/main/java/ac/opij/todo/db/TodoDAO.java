@@ -1,11 +1,11 @@
 package ac.opij.todo.db;
 
 import ac.opij.todo.core.Todo;
-import java.util.Optional;
 import io.dropwizard.hibernate.AbstractDAO;
 import org.hibernate.SessionFactory;
 
 import java.util.List;
+import java.util.Optional;
 
 public class TodoDAO extends AbstractDAO<Todo> {
 
